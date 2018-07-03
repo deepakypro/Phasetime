@@ -1,0 +1,60 @@
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+  xmlns:sothree="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/sliding_layout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:gravity="bottom"
+  sothree:umanoDragView="@+id/dragView"
+  sothree:umanoOverlay="true"
+  sothree:umanoPanelHeight="@dimen/dimen100dp"
+  sothree:umanoParallaxOffset="100dp"
+  sothree:umanoScrollableView="@+id/list"
+  sothree:umanoShadowHeight="4dp">
+
+  <!-- MAIN CONTENT -->
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+      android:id="@+id/include_sliding_top"
+      layout="@layout/sliding_layout_top"/>
+
+  </FrameLayout>
+
+  <!-- SLIDING LAYOUT -->
+  <LinearLayout
+    android:id="@+id/dragView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:clickable="true"
+    android:focusable="false"
+    android:orientation="vertical">
+
+    <RelativeLayout
+      android:id="@+id/sliding_layout_top_relative"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/dimen100dp"
+      android:background="@color/white"
+      android:orientation="horizontal">
+
+      <include
+        android:id="@+id/include_sliding_button"
+        layout="@layout/sliding_button"/>
+
+    </RelativeLayout>
+
+    <include
+      android:id="@+id/include_sliding_layout"
+      layout="@layout/sliding_layout_home"/>
+
+
+  </LinearLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+
